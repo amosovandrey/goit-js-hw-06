@@ -16,10 +16,12 @@
 
 // Напиши скрипт, который для каждого элемента массива ingredients:
 
-// Создаст отдельный элемент < li >.Обзательно используй метод document.createElement().
+// Создаст отдельный элемент < li >.
+// Обзательно используй метод document.createElement().
 // Добавит название ингредиента как его текстовое содержимое.
 // Добавит элементу класс item.
-// После чего вставит все < li > за одну операцию в список ul#ingredients.
+// После чего вставит все < li > за одну операцию 
+// в список ul#ingredients.
 
 
 
@@ -32,3 +34,16 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+
+
+
+const ingredientsEl = document.querySelector('#ingredients');
+// console.log('ingredientsEl', ingredientsEl);
+
+
+ingredients.forEach(ingredient => {
+  const ingredientItemEl = document.createElement('li')
+  ingredientItemEl.textContent = ingredient;
+  ingredientItemEl.classList = 'item';
+  ingredientsEl.append(ingredientItemEl);
+});
